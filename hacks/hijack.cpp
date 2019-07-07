@@ -6,7 +6,7 @@ void __attribute__((constructor)) startup(){
     }
 
 
-    void *handle = dlopen("./liboffense.so", RTLD_NOLOAD | RTLD_NOW);
+    void *handle = dlopen(l_name, RTLD_NOLOAD | RTLD_NOW);
     void *symbol = dlsym(handle, "numbers");
     l_fn l_addnums = (l_fn)dlsym(handle, "addnums");
     int test = l_addnums(1,2);

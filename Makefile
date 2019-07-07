@@ -8,10 +8,10 @@ EXEC = bin/main
 
 SOSRC = src/dl.cpp
 SOOBJ = $(SRC.cc=.o)
-SOEXEC = bin/liboffense.so
+SOEXEC = bin/libmain.so
 SOCXXFLAGS = -fPIC -shared
 HIJACKSRC = hacks/hijack.cpp
-HIJACKEXEC = bin/hijack.so
+HIJACKEXEC = bin/libhijack.so
 
 
 

@@ -1,4 +1,4 @@
-csgo_pid=$(pidof main)
+main_pid=$(pidof main)
 
 
 
@@ -7,9 +7,9 @@ csgo_pid=$(pidof main)
 
 input="$(
 sudo gdb -n -q -batch \
-  -ex "attach $csgo_pid" \
+  -ex "attach $main_pid" \
   -ex "set \$dlopen = (void*(*)(char*, int)) dlopen" \
-  -ex "call \$dlopen(\"$(pwd)/bin/hijack.so\", 1)" \
+  -ex "call \$dlopen(\"$(pwd)/bin/libhijack.so\", 1)" \
   -ex "detach" \
   -ex "quit"
 )"
