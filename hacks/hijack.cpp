@@ -1,4 +1,4 @@
-#include "hijack.hpp"
+#include "../headers/hijack.hpp"
 void __attribute__((constructor)) startup(){
     for(int i = 0; i < 5; i++){
         std::cout << std::endl;
